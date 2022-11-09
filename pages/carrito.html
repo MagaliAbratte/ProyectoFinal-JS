@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Estudio Crea es un espacio donde encontraras decoracion y objetos para tu hogar, con una tematica minimalista y natural.">
+    <meta name="keywords" content="arquitectura, jardines, decoracion, diseño, moderno, plantas, contemporaneo, planos">
+    <title>Carrito de Pago</title>
+    <link rel="stylesheet" href="../sass/main.css">
+    <!-- CSS only -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx"
+      crossorigin="anonymous"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Thasadith&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Thasadith&display=swap"
+      rel="stylesheet"
+    />
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="../index.html">
+            <img src="../assets/img/logocrea.png" alt="Logo Estudio Crea"/>
+          </a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+               <a href="./pages/carrito.html">
+                <img src="../assets/img/iconos/compra.png" alt="Carrito de Compra">
+               </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav> 
+
+      <main>
+        <div class="carrito">
+          <div class="container">
+              <form action="">
+                  <h1>
+                      Detalles de la compra
+                  </h1>
+                  <div class="name">
+                      <div>
+                          <label for="f-name">Nombre</label>
+                          <input type="text" name="f-name">
+                      </div>
+                      <div>
+                          <label for="l-name">Apellido</label>
+                          <input type="text" name="l-name">
+                      </div>
+                  </div>
+                  <div class="street">
+                      <label for="name">Direccion de envio</label>
+                      <input type="text" name="address">
+
+                      <div>
+                        <label for="l-name">Telefono</label>
+                        <input type="text" name="l-name">
+                    </div>
+                  </div>
+
+                  <h1>
+                    Forma de pago
+                  </h1>
+                  <div class="formaDePago">
+                    <select class="form-select" aria-label="Default select example">
+                      <option selected>Seleccione un metodo de pago</option>
+                      <option value="1">Pago unico con transferencia bancaria</option>
+                      <option value="2">3 cuotas sin interes con credito</option>
+                      <option value="3">6 cuotas sin interes con credito</option>
+                    </select>
+                  </div>
+
+                  <h1>
+                    Informacion de pago
+                  </h1>
+                  <div class="cc-num">
+                    <div>
+                      <label for="card-num">Nombre del titular</label>
+                       <input type="text" name="expire">
+                   </div>
+                      <label for="card-num">Numero de la tarjeta</label>
+                      <input type="text" name="card-num">
+                  </div>
+                  <div class="cc-info">
+                      <div>
+                          <label for="card-num">Fecha de vencimiento</label>
+                          <input type="text" name="expire">
+                      </div>
+                      <div>
+                          <label for="card-num">Codigo de seguridad</label>
+                          <input type="text" name="security">
+                      </div>
+                  </div>
+                  <div class="btns">
+                      <button>Comprar</button>
+                      <button>Volver al carrito</button>
+                  </div>
+              </form>
+          </div>
+         </div>
+      </main>
+
+      <footer class="footer">
+        <div class="footerImg">
+          <a href="https://www.instagram.com/estudiocrea_/" target="_blank">
+           <img src="../assets/img/iconos/instagram.png" alt="Icono Instagram">
+          </a>
+          <a href="https://web.whatsapp.com/" target="_blank">
+           <img src="../assets/img/iconos/whatsapp.png" alt="Icono Whatsapp">
+          </a>
+          <a href="https://www.gmail.com/mail/help/intl/es/about.html?iframe" target="_blank">
+           <img src="../assets/img/iconos/correo-electronico.png" alt="Icono correo-electronico">
+          </a>
+        </div>
+        <div class="footerInfo">
+         <p>Estudio Crea - Marull, Córdoba - Argentina</p>
+         <p>Copyright &copy; Estudio Crea, todos los derechos reservados.</p>
+        </div>
+      </footer>
+
+</body>
+</html>
