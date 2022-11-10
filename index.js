@@ -1,4 +1,4 @@
-/* // E-COMMERCE, VENTA DE PRODUCTOS DE DECORACION DE ESTUDIO CREA (Estudio de Arquitectura, Diseño de Jardines y venta de decoracion.)
+// E-COMMERCE, VENTA DE PRODUCTOS DE DECORACION DE ESTUDIO CREA (Estudio de Arquitectura, Diseño de Jardines y venta de decoracion.)
 
 //OBJETOS y ARRAYS
 class Productos {
@@ -146,5 +146,3 @@ if (pago === 1){
 
 const tarjetaDeCredito = new TarjetaCredito (nombreTitular, numeroTarjeta, vencimientoTarjeta, codigoSeguridad)
 alert (`Agradecemos tu compra y esperamos volver a verte pronto :) - ESTUDIO CREA -`) 
-
- */
