@@ -4,10 +4,176 @@
   box-sizing: border-box;
 }
 
-/* NAV */
-.nav-item a img {
+.titulo {
+  align-self: center;
+  font-family: "Urbanist", sans-serif;
+  color: #737373;
+  padding: 10px;
+  font-size: 2rem;
+}
+
+.texto {
+  font-family: "Lexend", sans-serif;
+  color: #575757;
+  font-size: 1.2rem;
+}
+
+.boton {
+  background-color: #969696;
+  border: none;
+  color: white;
+  padding: 10px 32px;
+  text-align: center;
+  font-size: 20px;
+  margin: 2px 2px;
+  opacity: 0.6;
+  transition: 0.3s;
+  display: inline-block;
+  text-decoration: none;
+  cursor: pointer;
+  border-radius: 10px;
+}
+
+.boton:hover {
+  opacity: 1;
+  box-shadow: 0 5px 5px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
+}
+
+.boton:active {
+  transform: translateY(10px);
+}
+
+.inputDatos {
+  width: 100%;
+  min-height: 25px;
+  border: 0;
+  font-size: 1rem;
+  font-family: "Lexend", sans-serif;
+  letter-spacing: 0.15rem;
+  margin-top: 5px;
+  border-radius: 4px;
+  padding: 10px;
+}
+
+.nav-item img {
   width: 50px;
   height: auto;
+  cursor: pointer;
+}
+.nav-item img:hover {
+  width: 55px;
+}
+
+.tarjetas {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  gap: 120px;
+}
+.tarjetas .tarjetaProducto {
+  text-align: center;
+  border: 10px;
+  background-color: #E3E3E3;
+  padding: 20px;
+  border-radius: 10%;
+  width: 300px;
+  height: 350px;
+  font-family: "Lexend", sans-serif;
+  font-size: 1.2rem;
+}
+
+.carrito-compras {
+  margin-top: 30px;
+  margin-left: 20%;
+  background-color: #E3E3E3;
+  width: 800px;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border-radius: 5%;
+}
+.carrito-compras .header-carrito {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  font-family: "Urbanist", sans-serif;
+  color: white;
+  background-color: #575757;
+  padding: 20px;
+}
+.carrito-compras .contenido-carrito {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 20px;
+  font-family: "Urbanist", sans-serif;
+  color: #737373;
+}
+.carrito-compras .footer-carrito {
+  background-color: #737373;
+  color: white;
+  font-size: 1rem;
+  text-align: center;
+  font-family: "Lexend", sans-serif;
+  font-size: 1.5rem;
+  padding: 15px;
+  border: none;
+}
+.carrito-compras .footer-carrito:hover {
+  opacity: 1;
+  box-shadow: 0 5px 5px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
+}
+.carrito-compras .datos-usuario {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 600px;
+  gap: 10px;
+  margin-left: 12%;
+}
+.carrito-compras .divPago {
+  padding: 30px;
+  margin-left: 8%;
+}
+.carrito-compras .divPago .select {
+  width: 600px;
+  min-height: 25px;
+  border: none;
+  font-size: 1.2rem;
+  font-family: "Lexend", sans-serif;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  border-radius: 4px;
+  padding: 10px;
+}
+.carrito-compras .divPago .div-pagounico {
+  width: 600px;
+  color: #31394C;
+  margin-left: 10%;
+  margin-top: 30px;
+}
+.carrito-compras .divPago .div-seiscuotas {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 600px;
+  gap: 10px;
+}
+.carrito-compras .divPago .div-trescuotas {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 600px;
+  gap: 10px;
+}
+.carrito-compras .div-final {
+  padding: 10px;
+  width: 600px;
+  margin-left: 10%;
 }
 
 /* BOOTSTRAP */
@@ -15,28 +181,35 @@
   margin-top: 50px;
 }
 
-.card .card-body .card-title {
-  font-family: "Thasadith", sans-serif;
-}
-.card .card-body .card-text {
-  font-family: "Thasadith", sans-serif;
-}
-.card .card-body .btn-primary {
-  font-family: "Thasadith", sans-serif;
-  font-size: 1rem;
-  background-color: #D9C6B0;
-  border-color: #D9C6B0;
-  color: #454A55;
-}
-.card .card-body .btn-primary:hover {
-  background-color: white;
-  color: #454A55;
-  border-color: #D9C6B0;
-}
+/* .card{
+    .card-body{
 
+        .card-title{
+            font-family: $fontTexto;
+        }
+
+        .card-text{
+            font-family: $fontTexto;
+        }
+
+        .btn-primary{
+            font-family: $fontTexto;
+            font-size: 1rem;
+            background-color: #D9C6B0;
+            border-color: #D9C6B0;
+            color:  #454A55;
+
+            &:hover {
+                background-color: $bgColor1;
+                color:  #454A55;
+                border-color: #D9C6B0;
+           } 
+        }
+    }
+} */
 .titulo h1 {
-  font-family: "Bebas Neue", cursive;
-  color: #6B7060;
+  font-family: "Urbanist", sans-serif;
+  color: #31394C;
   text-align: center;
   font-size: 4.5rem;
   margin-top: 50px;
@@ -59,7 +232,7 @@
   border-radius: 5px;
 }
 .flex-decoracion .deco-item p {
-  font-family: "Thasadith", sans-serif;
+  font-family: "Lexend", sans-serif;
   text-align: center;
   margin-top: 20px;
   color: white;
@@ -82,7 +255,7 @@ footer {
   justify-content: space-between;
   align-items: center;
   background-color: white;
-  font-family: "Thasadith", sans-serif;
+  font-family: "Lexend", sans-serif;
   font-size: 1.2rem;
   width: 100%;
   padding: 10px;
@@ -100,145 +273,150 @@ footer {
 }
 
 /* CARRITO DE PAGO */
-.carrito {
-  display: flex;
-  flex-direction: column;
-  margin-top: 2%;
-  margin-left: 20%;
-  margin-bottom: 10%;
-  background-color: #F2F1F0;
-  width: 60%;
-  display: flex;
-  justify-content: center;
-  box-shadow: 9px 13px 25px 0px rgba(0, 0, 0, 0.18);
+/* .carrito {
+    display: flex;
+    flex-direction: column;
+    margin-top: 2%;
+    margin-left: 20%;
+    margin-bottom: 10%;
+    background-color: $bgColor;
+    width: 60%;
+    display: flex;
+    justify-content: center;
+    -webkit-box-shadow: 9px 13px 25px 0px rgba(0, 0, 0, 0.18);
+    -moz-box-shadow: 9px 13px 25px 0px rgba(0, 0, 0, 0.18);
+    box-shadow: 9px 13px 25px 0px rgba(0, 0, 0, 0.18);
 }
 
 .container {
-  width: 50%;
-}
-.container h1 {
-  align-self: center;
-  font-family: "Bebas Neue", cursive;
-  color: #9DA695;
-  text-align: center;
-  padding: 50px;
-  font-size: 3rem;
+    width: 50%;
+
+    h1 {
+        align-self: center;
+        font-family: $fontEncabezados;
+        color: $colorSubtitulos;
+        text-align: center;
+        padding: 50px;
+        font-size: 3rem;
+    }
 }
 
 form {
-  width: 100%;
-}
-form input {
-  width: 100%;
-  min-height: 25px;
-  border: 0;
-  font-size: 1rem;
-  font-family: "Thasadith", sans-serif;
-  letter-spacing: 0.15rem;
-  margin-top: 5px;
-  border-radius: 4px;
-  padding: 10px;
-}
-form label {
-  text-transform: uppercase;
-  font-size: 1rem;
-  font-family: "Thasadith", sans-serif;
-  letter-spacing: 2px;
-  padding: 10px;
-}
-form h1 {
-  font-size: 24px;
-  line-height: 10px;
-  letter-spacing: 1px;
+    width: 100%;
+
+    input {
+        width: 100%;
+        min-height: 25px;
+        border: 0;
+        font-size: 1rem;
+        font-family: $fontTexto;
+        letter-spacing: .15rem;
+        margin-top: 5px;
+        border-radius: 4px;
+        padding: 10px;
+    }
+
+    label {
+        text-transform: uppercase;
+        font-size: 1rem;
+        font-family: $fontTexto;
+        letter-spacing: 2px;
+        padding: 10px;
+    }
+
+    h1 {
+        font-size: 24px;
+        line-height: 10px;
+        letter-spacing: 1px;
+    }
 }
 
 .name {
-  justify-content: space-between;
-  display: flex;
-  width: 100%;
-}
-.name div {
-  width: 45%;
+    justify-content: space-between;
+    display: flex;
+    width: 100%;
+
+    div {
+        width: 45%;
+    }
 }
 
 .address-info {
-  display: flex;
-  justify-content: space-between;
-}
-.address-info div {
-  width: 30%;
+    display: flex;
+    justify-content: space-between;
+
+    div {
+        width: 30%;
+    }
 }
 
 .cc-info {
-  display: flex;
-  justify-content: space-between;
-}
-.cc-info div {
-  width: 45%;
+    display: flex;
+    justify-content: space-between;
+
+    div {
+        width: 45%;
+    }
 }
 
 .btns {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 30px;
-  gap: 10px;
-}
-.btns button {
-  margin: 3px 0;
-  height: 30px;
-  width: 40%;
-  color: white;
-  background-color: #6B7060;
-  text-transform: uppercase;
-  border: 0;
-  border-radius: 0.3rem;
-  letter-spacing: 2px;
-}
-.btns button:hover {
-  -webkit-animation-name: btn-hov;
-          animation-name: btn-hov;
-  -webkit-animation-duration: 550ms;
-          animation-duration: 550ms;
-  -webkit-animation-fill-mode: forwards;
-          animation-fill-mode: forwards;
-}
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 30px;
+    gap: 10px;
 
-@-webkit-keyframes btn-hov {
-  100% {
-    background-color: #9DA695;
-    color: white;
-    transform: scale(1.05);
-  }
+    button {
+        margin: 3px 0;
+        height: 30px;
+        width: 40%;
+        color: white;
+        background-color:#6B7060;
+        text-transform: uppercase;
+        border: 0;
+        border-radius: .3rem;
+        letter-spacing: 2px;
+
+        &:hover {
+            animation-name: btn-hov;
+            animation-duration: 550ms;
+            animation-fill-mode: forwards;
+        }
+    }
 }
 
 @keyframes btn-hov {
-  100% {
-    background-color: #9DA695;
-    color: white;
-    transform: scale(1.05);
-  }
+    100% {
+        background-color:#9DA695;
+        color: white;
+        transform: scale(1.05)
+    }
 }
+
 input:focus,
 button:focus {
-  outline: none;
+    outline: none;
 }
 
-.formaDePago select {
-  width: 100%;
-  min-height: 25px;
-  border: 0;
-  font-size: 1.2rem;
-  font-family: "Thasadith", sans-serif;
-  margin-top: 5px;
-  border-radius: 4px;
-  padding: 10px;
-}
-.formaDePago select option {
-  font-family: "Thasadith", sans-serif;
-  font-size: 1.2rem;
-}
+.formaDePago{
+        select{
+            width: 100%;
+            min-height: 25px;
+            border: 0;
+            font-size: 1.2rem;
+            font-family: $fontTexto;
+            margin-top: 5px;
+            border-radius: 4px;
+            padding: 10px;
 
+              option{
+                font-family: $fontTexto;
+                font-size: 1.2rem;
+            }
+        }
+
+    }
+ */
 /* @media (max-width: 736px) {
     .wrapper {
         width: 100%;
@@ -340,7 +518,7 @@ button:focus {
     height: 150px;
   }
   .flex-decoracion .deco-item p {
-    font-family: "Thasadith", sans-serif;
+    font-family: "Lexend", sans-serif;
     text-align: center;
     margin-top: 20px;
     color: white;

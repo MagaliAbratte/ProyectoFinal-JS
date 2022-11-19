@@ -6,20 +6,202 @@
 
 $bgColor: #F2F1F0;
 $bgColor1: white;
-$fontEncabezados: 'Bebas Neue', cursive;
-$fontTexto:'Thasadith', sans-serif;
-$colorEncabezados: #6B7060;
-$colorSubtitulos: #9DA695;
+$fontEncabezados: 'Urbanist', sans-serif;
+$fontTexto:'Lexend', sans-serif;
+$colorEncabezados: #31394C;
+$colorSubtitulos:#737373;
+$colorFondo: #E3E3E3;
+$colorBotones1: #969696;
+$colorBotones2: #D9D9D9;
 
-/* NAV */
+.titulo{
+    align-self: center;
+    font-family: $fontEncabezados;
+    color: #737373;
+    padding: 10px;
+    font-size: 2rem;
+}
+
+.texto{
+    font-family: $fontTexto;
+    color: #575757;
+    font-size: 1.2rem;
+}
+
+.boton {
+    background-color: $colorBotones1;
+    border: none;
+    color: white;
+    padding: 10px 32px;
+    text-align: center;
+    font-size: 20px;
+    margin: 2px 2px;
+    opacity: 0.6;
+    transition: 0.3s;
+    display: inline-block;
+    text-decoration: none;
+    cursor: pointer;
+    border-radius: 10px;
+  }
+  
+  .boton:hover {opacity: 1;
+    box-shadow: 0 5px 5px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);}
+
+  .boton:active {
+    transform: translateY(10px);
+  }
+
+.inputDatos{
+    width: 100%;
+    min-height: 25px;
+    border: 0;
+    font-size: 1rem;
+    font-family: $fontTexto;
+    letter-spacing: .15rem;
+    margin-top: 5px;
+    border-radius: 4px;
+    padding: 10px;
+}
+
+//NAV
 .nav-item{
-    a{
-       img{
-        width: 50px;
-        height: auto;
-        }
+    img{
+     width: 50px;
+     height: auto;
+     cursor: pointer;
+    } 
+
+    img:hover{
+     width: 55px;
     }
-    
+}
+
+//TARJETAS
+.tarjetas{
+ display: flex;
+ flex-direction: row;
+ justify-content: space-evenly;
+ flex-wrap: wrap;
+ gap: 120px;
+
+ .tarjetaProducto{
+     text-align: center;
+     border: 10px;
+     background-color: $colorFondo;
+     padding: 20px;
+     border-radius: 10%;
+     width: 300px;
+     height: 350px;
+     font-family: $fontTexto;
+     font-size: 1.2rem;
+ }
+}
+ 
+//CARRITO
+.carrito-compras{
+    margin-top: 30px;
+    margin-left: 20%;
+    background-color: $colorFondo;
+    width: 800px;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-radius: 5%;
+
+.header-carrito{
+ display: flex;
+ flex-direction: row;
+ justify-content: space-around;
+ font-family: $fontEncabezados;
+ color: white;
+ background-color: #575757;
+ padding: 20px;
+}
+
+.contenido-carrito{
+ display: flex;
+ flex-direction: row;
+ justify-content: space-between;
+ padding: 20px;
+ font-family: $fontEncabezados;
+ color: #737373;
+}
+
+.footer-carrito{
+ background-color: $colorSubtitulos;
+ color: white;
+ font-size: 1rem;
+ text-align: center;
+ font-family: $fontTexto;
+ font-size: 1.5rem;
+ padding: 15px;
+ border: none;
+
+ &:hover{
+    opacity: 1;
+    box-shadow: 0 5px 5px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+ }
+}
+
+
+.datos-usuario{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 600px;
+    gap: 10px;
+    margin-left: 12%;
+}
+
+.divPago{
+    padding: 30px;
+    margin-left: 8%;
+
+    .select{
+        width: 600px;
+        min-height: 25px;
+        border: none;
+        font-size: 1.2rem;
+        font-family: $fontTexto;
+        margin-top: 15px;
+        margin-bottom: 15px;
+        border-radius: 4px;
+        padding: 10px;
+        
+    }
+
+    .div-pagounico{
+        width: 600px;
+        color: $colorEncabezados;
+        margin-left: 10%;
+        margin-top: 30px; 
+    }
+
+    .div-seiscuotas{
+        margin-top: 20px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 600px;
+        gap: 10px;
+    }
+
+    .div-trescuotas{
+        margin-top: 20px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 600px;
+        gap: 10px;
+    }
+}
+
+.div-final{
+    padding: 10px;
+    width: 600px;
+    margin-left: 10%;
+}
 }
 
 /* BOOTSTRAP */
@@ -27,7 +209,7 @@ $colorSubtitulos: #9DA695;
     margin-top: 50px;
 }
 
-.card{
+/* .card{
     .card-body{
 
         .card-title{
@@ -52,7 +234,7 @@ $colorSubtitulos: #9DA695;
            } 
         }
     }
-}
+} */
 
 .titulo{
     h1{
@@ -134,7 +316,7 @@ footer{
 
 /* CARRITO DE PAGO */
 
-.carrito {
+/* .carrito {
     display: flex;
     flex-direction: column;
     margin-top: 2%;
@@ -277,7 +459,7 @@ button:focus {
         }
        
     }
-
+ */
 /* @media (max-width: 736px) {
     .wrapper {
         width: 100%;
