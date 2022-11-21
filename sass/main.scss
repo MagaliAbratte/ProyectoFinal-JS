@@ -8,11 +8,14 @@ $bgColor: #F2F1F0;
 $bgColor1: white;
 $fontEncabezados: 'Urbanist', sans-serif;
 $fontTexto:'Lexend', sans-serif;
+$fontTexto1:'Poppins', sans-serif;
 $colorEncabezados: #31394C;
 $colorSubtitulos:#737373;
 $colorFondo: #E3E3E3;
 $colorBotones1: #969696;
 $colorBotones2: #D9D9D9;
+
+//GENERALES
 
 .titulo{
     align-self: center;
@@ -82,22 +85,59 @@ $colorBotones2: #D9D9D9;
  flex-direction: row;
  justify-content: space-evenly;
  flex-wrap: wrap;
- gap: 120px;
+ gap: 50px;
 
  .tarjetaProducto{
      text-align: center;
      border: 10px;
      background-color: $colorFondo;
-     padding: 20px;
+     padding: 10px;
      border-radius: 10%;
-     width: 300px;
-     height: 350px;
+     width: 400px;
+     height: 500px;
      font-family: $fontTexto;
      font-size: 1.2rem;
+
+     &:hover{
+        background-color: $colorEncabezados;
+        color: white;
+     }
+
+     .card-title{
+        font-family: $fontTexto1;
+     }
+
+     .card-text-precio{
+        font-family: $fontTexto1;
+        font-size: 1.2rem;
+        padding: 10px;
+     }
+     
+     .card-text-descripcion{
+        margin-top: -15px;
+     }
+     .imagenesProductos{
+        width: 220px;
+        height: auto;
+     }
  }
 }
  
 //CARRITO
+.contadorCarrito{
+    background-color: $colorBotones1;
+    color: white;
+    border-radius:50%;
+    font-size: 12px;
+    padding: 2px;
+    top: 37px;
+    left: 190px;
+    display: none;
+    position: absolute;
+    width: 20px;
+    text-align: center;
+}
+
 .carrito-compras{
     margin-top: 30px;
     margin-left: 20%;
@@ -126,6 +166,23 @@ $colorBotones2: #D9D9D9;
  padding: 20px;
  font-family: $fontEncabezados;
  color: #737373;
+
+ &:hover{
+    background-color: $colorEncabezados;
+    color: white;
+ }
+
+ .itemCarritoTitulo{
+    width: 300px;
+    align-items: center;
+    font-size: 2rem;
+ }
+
+ .itemCarrito{
+    width: 200px;
+    align-items: center;
+    font-size: 1.5rem;
+ }
 }
 
 .footer-carrito{
@@ -209,33 +266,6 @@ $colorBotones2: #D9D9D9;
     margin-top: 50px;
 }
 
-/* .card{
-    .card-body{
-
-        .card-title{
-            font-family: $fontTexto;
-        }
-
-        .card-text{
-            font-family: $fontTexto;
-        }
-        
-        .btn-primary{
-            font-family: $fontTexto;
-            font-size: 1rem;
-            background-color: #D9C6B0;
-            border-color: #D9C6B0;
-            color:  #454A55;
-                
-            &:hover {
-                background-color: $bgColor1;
-                color:  #454A55;
-                border-color: #D9C6B0;
-           } 
-        }
-    }
-} */
-
 .titulo{
     h1{
         font-family: $fontEncabezados;
@@ -247,7 +277,7 @@ $colorBotones2: #D9D9D9;
     }
 }
 
-/* FLEX INFERIOR */
+/* FLEX SUPERIOR */
 .flex-decoracion{
         display: flex;
         flex-direction: row;
@@ -509,7 +539,7 @@ button:focus {
 
 
 /* MEDIAS QUERIES */
-@media (max-width: 912px){
+/* @media (max-width: 912px){
     .flex-decoracion{
         display: flex;
         flex-direction: row;
@@ -614,4 +644,4 @@ button:focus {
         margin-left: 0px
     } 
 }
-}
+} */

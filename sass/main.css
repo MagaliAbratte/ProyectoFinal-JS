@@ -69,18 +69,51 @@
   flex-direction: row;
   justify-content: space-evenly;
   flex-wrap: wrap;
-  gap: 120px;
+  gap: 50px;
 }
 .tarjetas .tarjetaProducto {
   text-align: center;
   border: 10px;
   background-color: #E3E3E3;
-  padding: 20px;
+  padding: 10px;
   border-radius: 10%;
-  width: 300px;
-  height: 350px;
+  width: 400px;
+  height: 500px;
   font-family: "Lexend", sans-serif;
   font-size: 1.2rem;
+}
+.tarjetas .tarjetaProducto:hover {
+  background-color: #31394C;
+  color: white;
+}
+.tarjetas .tarjetaProducto .card-title {
+  font-family: "Poppins", sans-serif;
+}
+.tarjetas .tarjetaProducto .card-text-precio {
+  font-family: "Poppins", sans-serif;
+  font-size: 1.2rem;
+  padding: 10px;
+}
+.tarjetas .tarjetaProducto .card-text-descripcion {
+  margin-top: -15px;
+}
+.tarjetas .tarjetaProducto .imagenesProductos {
+  width: 220px;
+  height: auto;
+}
+
+.contadorCarrito {
+  background-color: #969696;
+  color: white;
+  border-radius: 50%;
+  font-size: 12px;
+  padding: 2px;
+  top: 37px;
+  left: 190px;
+  display: none;
+  position: absolute;
+  width: 20px;
+  text-align: center;
 }
 
 .carrito-compras {
@@ -110,6 +143,20 @@
   padding: 20px;
   font-family: "Urbanist", sans-serif;
   color: #737373;
+}
+.carrito-compras .contenido-carrito:hover {
+  background-color: #31394C;
+  color: white;
+}
+.carrito-compras .contenido-carrito .itemCarritoTitulo {
+  width: 300px;
+  align-items: center;
+  font-size: 2rem;
+}
+.carrito-compras .contenido-carrito .itemCarrito {
+  width: 200px;
+  align-items: center;
+  font-size: 1.5rem;
 }
 .carrito-compras .footer-carrito {
   background-color: #737373;
@@ -181,32 +228,6 @@
   margin-top: 50px;
 }
 
-/* .card{
-    .card-body{
-
-        .card-title{
-            font-family: $fontTexto;
-        }
-
-        .card-text{
-            font-family: $fontTexto;
-        }
-
-        .btn-primary{
-            font-family: $fontTexto;
-            font-size: 1rem;
-            background-color: #D9C6B0;
-            border-color: #D9C6B0;
-            color:  #454A55;
-
-            &:hover {
-                background-color: $bgColor1;
-                color:  #454A55;
-                border-color: #D9C6B0;
-           } 
-        }
-    }
-} */
 .titulo h1 {
   font-family: "Urbanist", sans-serif;
   color: #31394C;
@@ -216,7 +237,7 @@
   height: 100px;
 }
 
-/* FLEX INFERIOR */
+/* FLEX SUPERIOR */
 .flex-decoracion {
   display: flex;
   flex-direction: row;
@@ -464,90 +485,109 @@ button:focus {
     }
 }  */
 /* MEDIAS QUERIES */
-@media (max-width: 912px) {
-  .flex-decoracion {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    align-items: center;
-    margin-top: 50px;
-    margin-bottom: 50px;
-  }
-  .flex-decoracion .deco-item {
-    width: 250px;
-    height: 150px;
-  }
-  .flex-decoracion .deco-item p {
-    font-size: 1.4rem;
-  }
+/* @media (max-width: 912px){
+    .flex-decoracion{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        align-items: center;
+        margin-top: 50px;
+        margin-bottom: 50px;
+
+        .deco-item{
+            width: 250px;
+            height: 150px;
+
+            p{
+               font-size: 1.4rem;
+            }
+        }
+    }
+} 
+
+@media (max-width: 768px){
+    .flex-decoracion{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        align-items: center;
+        margin-top: 50px;
+        margin-bottom: 50px;
+
+        .deco-item{
+            width: 250px;
+            height: 150px;
+
+            p{
+               font-size: 1.4rem;
+            }
+        }
+    }
 }
-@media (max-width: 768px) {
-  .flex-decoracion {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    align-items: center;
-    margin-top: 50px;
-    margin-bottom: 50px;
-  }
-  .flex-decoracion .deco-item {
-    width: 250px;
-    height: 150px;
-  }
-  .flex-decoracion .deco-item p {
-    font-size: 1.4rem;
-  }
-}
-@media (max-width: 576px) {
-  .titulo h1 {
-    font-size: 4rem;
-    height: 80px;
-  }
-  .flex-decoracion {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
-    align-items: center;
-    margin-top: 30px;
-    margin-bottom: 30px;
-  }
-  .flex-decoracion .deco-item {
-    margin: 20px;
-    width: 250px;
-    height: 150px;
-  }
-  .flex-decoracion .deco-item p {
-    font-family: "Lexend", sans-serif;
-    text-align: center;
-    margin-top: 20px;
-    color: white;
-    font-size: 1.4rem;
-  }
-  .flex-decoracion .deco-item img {
-    width: 50px;
-    height: auto;
-    margin-left: 43%;
-    filter: invert(1);
-  }
-  .flex-decoracion .deco-item:hover {
-    background-color: #6B7060;
-  }
-  .footer {
+
+@media (max-width: 576px){
+
+    .titulo{
+        h1{
+            font-size: 4rem;
+            height: 80px;
+        }
+    }
+
+    .flex-decoracion{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+        align-items: center;
+        margin-top: 30px;
+        margin-bottom: 30px;
+
+        .deco-item{
+            margin: 20px;
+            width: 250px;
+            height: 150px;
+
+            p{
+               font-family: $fontTexto;
+               text-align: center;
+               margin-top: 20px;
+               color: white;
+               font-size: 1.4rem;
+            }
+
+            img{
+                width: 50px;
+                height: auto;
+                margin-left: 43%;
+                filter: invert(1);
+            }
+
+            &:hover{
+                background-color: #6B7060;
+            }
+        }
+    }
+
+    .footer {
     display: flex;
     flex-direction: column-reverse;
     justify-content: space-between;
     align-items: center;
     width: 100%;
-  }
-  .footer .footerImg img {
-    width: 50px;
-    height: auto;
-    cursor: pointer;
-    padding: 10px;
-    margin-right: 10px;
-  }
-  .footer .footerInfo {
-    margin-left: 0px;
-  }
-}/*# sourceMappingURL=main.css.map */
+
+    .footerImg {
+        img {
+            width: 50px;
+            height: auto;
+            cursor: pointer;
+            padding: 10px;
+            margin-right: 10px;
+        }
+    }
+
+    .footerInfo {
+        margin-left: 0px
+    } 
+}
+} *//*# sourceMappingURL=main.css.map */
