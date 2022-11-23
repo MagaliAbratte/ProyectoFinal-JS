@@ -1,8 +1,9 @@
 //DOM, EVENTOS Y STORAGE PARA PROYECTO FINAL - ESTUDIO CREA
+//FUERA DE USO
 
-const tarjetasProductos = document.getElementById ('tarjetasProductos')
+/* const tarjetasProductos = document.getElementById ('tarjetasProductos') */
 
-class ProductosCrea {
+/* class ProductosCrea {
     constructor (id,nombre,img, precio, descripcion, cantidad){
         this.id = id;
         this.nombre = nombre;
@@ -40,9 +41,8 @@ productos.push (plantas2)
 let plantas3 = new ProductosCrea (12, 'PLANTA CROTON','./assets/img/sliders/croton.jpg', 1800, 'Planta croton de tamaño mediano o grande. Se entrega lista para transplantar.',1);
 productos.push (plantas3) 
 
-let carrito = []
 
-productos.forEach (product =>{
+ productos.forEach (product =>{
     let contenido = document.createElement ('div');
     contenido.className = 'tarjetaProducto'
     contenido.innerHTML = `
@@ -54,17 +54,15 @@ productos.forEach (product =>{
     <p class='card-text-descripcion'>${product.descripcion}</p>
     </div>
     `
-    tarjetasProductos.append (contenido);
-    
-    let botonCompra = document.createElement ('button');
-    botonCompra.className = 'boton'
-    botonCompra.innerText = 'Añadir'
-    
-    contenido.append(botonCompra);
-    
-    botonCompra.addEventListener ('click', ()=>{
-        const repetido = carrito.some ((productoRepetido) => productoRepetido.id === product.id)
+})
 
+const botonCompra = document.getElementById(`boton${producto.id}`);
+  boton.addEventListener('click', () => {
+    agregarAlCarrito(producto.id);
+  });
+    
+botonCompra.addEventListener ('click', ()=>{
+        const repetido = carrito.some ((productoRepetido) => productoRepetido.id === product.id)
         if (repetido){
             carrito.map ((prod)=>{
                 if (prod.id === product.id){
@@ -80,8 +78,8 @@ productos.forEach (product =>{
             })
         }
         contadorCarrito()
-    })
-})
+    }) 
+
 
 const iconoCarrito = document.getElementById ('iconoCarrito')
 const carritoDeCompras = document.getElementById ('carritoDeCompras')
@@ -108,7 +106,7 @@ iconoCarrito.addEventListener('click', ()=> {
     carritoBoton.className = 'boton'
 
     carritoBoton.addEventListener ('click', ()=>{
-        carritoDeCompras.style.display = 'none'
+     carritoDeCompras.style.display = 'none' 
     });
     
     carritoHeader.append (carritoBoton)
@@ -121,6 +119,7 @@ iconoCarrito.addEventListener('click', ()=> {
         <h2 class= 'itemCarrito'>$${product.precio}</h2>
         <p class= 'itemCarrito'> ${product.cantidad}</p>
         <p> ${product.cantidad * product.precio} </p>
+        <button id='eliminar' class='boton'>Eliminar</button>
         `
         carritoDeCompras.append (contenidoCarrito);
     });
@@ -146,7 +145,8 @@ iconoCarrito.addEventListener('click', ()=> {
         <input id=direccionUsuario class= 'inputDatos' placeholder='Ingresa tu direccion'></input>
         <button id=botonPagar class='boton'>Enviar</button>
         `
-        carritoDeCompras.append (datosUsuario);
+        carritoDeCompras.append (datosUsuario); 
+
 
         let nombreUsuario = document.getElementById ('nombreUsuario');
         let apellidoUsuario = document.getElementById ('apellidoUsuario');
@@ -324,3 +324,162 @@ iconoCarrito.addEventListener('click', ()=> {
 }) 
 
 
+ */
+
+
+
+/////// OPCIONES DE PAGO PARA CODIGO NUEVO
+/* let opcionPago = document.createElement ('div')
+opcionPago.className = 'divPago'
+opcionPago.innerHTML = `
+        <select id='selectPago' class= 'select'>
+            <option selected>Seleccione un metodo de pago</option>
+            <option id= 'opcion1'>Pago unico con transferencia bancaria</option>
+            <option id= 'opcion2'>3 cuotas sin interes con credito</option>
+            <option id= 'opcion3'>6 cuotas sin interes con credito</option>
+        </select>
+       <button id= 'seleccionPago' class= 'boton'>Seleccionar opcion</button>
+       `
+carritoDeCompras.append (opcionPago);
+    
+let selector = document.getElementById ('selectPago')
+let seleccionPago = document.getElementById ('seleccionPago')
+    
+seleccionPago.addEventListener ('click', ()=>{
+    const numeroSelector = selector.selectedIndex
+    let opcionSeleccionada = numeroSelector
+        
+    function opcionTres (monto, seis){
+        resultado = monto/seis
+    }
+
+    function opcionSeis (monto, seis){
+        resultado = monto/seis
+    }
+
+    if (opcionSeleccionada === 1){
+    let pagoUnico = document.createElement ('div')
+    pagoUnico.className = 'div-pagounico'
+    pagoUnico.innerHTML = `
+            <h3 class='titulo'>PAGO UNICO CON TRANSFERENCIA BANCARIA</h3>
+            <p class= 'texto'>Informacion para realizar el pago: </p>
+            <p class= 'texto'>CBU: 1111111111111111111 </p>
+            <p class= 'texto'>TITULAR: Sofia Scolari </p>
+            <p class= 'texto'>TIPO DE CUENTA: Caja de ahorro en pesos </p> 
+            <p class= 'texto'>ALIAS: estudio.crea </p>
+
+            <p class= 'texto'>Envia el comprobante de pago a estudiocrea@gmail.com. IMPORTANTE: Si no envias el comprobante en las 24 hs posteriores a la compra, la misma se da baja automaticamente.
+            </p>
+            <button id= botonFinal class='boton'>Finalizar compra</button>
+            `
+    opcionPago.append (pagoUnico);
+        
+    let finCompra = document.getElementById ('botonFinal')
+    finCompra.className = 'boton'
+            
+    finCompra.addEventListener ('click', ()=>{
+    let divFinal = document.createElement ('div')
+    divFinal.className = 'div-final'
+    divFinal.innerHTML = `
+                <p class= 'texto'>¡Gracias por tu compra ${nombreUsuario.value}!</p>
+                <p class= 'texto'>Enviaremos tu pedido a ${direccionUsuario.value}.
+                En las siguientes 48 hs recibiras el codigo de seguimiento de tu pedido en tu correo electronico.
+                Ante cualquier inconveniente, comunicate a 3563487569 o estudiocrea@gmail.com.
+                </p>
+                `
+    carritoDeCompras.append (divFinal)
+    })
+    }else if (opcionSeleccionada === 2){
+        opcionTres (total, 3)
+        let tresCuotas = document.createElement ('div')
+        tresCuotas.className = 'div-trescuotas'
+        tresCuotas.innerHTML = `
+        <h3 class= 'titulo'>Pago en tres cuotas con credito, de $${resultado} cada una.</h3>
+        <p class= 'texto'>A continuacion, ingresa los datos de la tarjeta en el formulario</p>
+        <input id= 'nombreTarjeta'  class= 'inputDatos' placeholder="Nombre y apellido del titular"> </input>
+        <input id= 'numeroTarjeta' class= 'inputDatos' placeholder= "Numero de la tarjeta"> </input>
+        <input id= 'vencimientoTarjeta' class= 'inputDatos' placeholder = "Vencimiento"> </input>
+        <input id= 'codigoTarjeta' class= 'inputDatos' placeholder = "Codigo de seguridad"> </input>
+        <button id= 'botonTarjeta' class= 'boton'>Enviar datos</button>
+        <button id= 'botonFinal' class='boton'>Finalizar compra</button>
+        `
+        opcionPago.append (tresCuotas)
+
+        let nombreTarjeta = document.getElementById ('nombreTarjeta')
+        let numeroTarjeta = document.getElementById ('numeroTarjeta')
+        let vencimiento = document.getElementById ('vencimientoTarjeta')
+        let codigo = document.getElementById ('codigoTarjeta')
+        let botonTarjeta = document.getElementById ('botonTarjeta')
+
+        botonTarjeta.addEventListener ('click', ()=>{
+            const datosTarjeta = {
+                nombre: nombreTarjeta.value,
+                numero: numeroTarjeta.value,
+                vencimiento: vencimiento.value,
+                codigo: codigo.value
+            }
+        })
+
+        let finCompra = document.getElementById ('botonFinal')
+            finCompra.className = 'boton'
+            
+            finCompra.addEventListener ('click', ()=>{
+                let divFinal = document.createElement ('div')
+                divFinal.className = 'div-final'
+                divFinal.innerHTML = `
+                <p class= 'texto'>¡Gracias por tu compra ${nombreUsuario.value}!</p>
+                <p class= 'texto'>Enviaremos tu pedido a ${direccionUsuario.value}.
+                En las siguientes 48 hs recibiras el codigo de seguimiento de tu pedido en tu correo electronico.
+                Ante cualquier inconveniente, comunicate a 3563487569 o estudiocrea@gmail.com.
+                </p>
+                `
+            carritoDeCompras.append (divFinal)
+            })
+        } else if (opcionSeleccionada === 3){
+            opcionSeis (total, 6)
+            let seisCuotas = document.createElement ('div')
+            seisCuotas.className = 'div-seiscuotas'
+            seisCuotas.innerHTML = `
+            <h3 class= 'titulo'>Pago en seis cuotas con credito, de $${resultado} cada una.</h3>
+            <p class= 'texto'>A continuacion, ingresa los datos de la tarjeta en el formulario</p>
+            <input id= 'nombreTarjeta'  class= 'inputDatos' placeholder="Nombre y apellido del titular"> </input>
+            <input id= 'numeroTarjeta'  class= 'inputDatos' placeholder= "Numero de la tarjeta"> </input>
+            <input id= 'vencimientoTarjeta' class= 'inputDatos' placeholder = "Vencimiento"> </input>
+            <input id= 'codigoTarjeta'  class= 'inputDatos' placeholder = "Codigo de seguridad"> </input>
+            <button id= 'botonTarjeta' class= 'boton'>Enviar datos</button>
+            <button id= 'botonFinal' class= 'boton'> Finalizar compra</button>
+            `
+            opcionPago.append (seisCuotas)
+
+            let nombreTarjeta = document.getElementById ('nombreTarjeta')
+            let numeroTarjeta = document.getElementById ('numeroTarjeta')
+            let vencimiento = document.getElementById ('vencimientoTarjeta')
+            let codigo = document.getElementById ('codigoTarjeta')
+            let botonTarjeta = document.getElementById ('botonTarjeta')
+
+            botonTarjeta.addEventListener ('click', ()=>{
+                const datosTarjeta = {
+                    nombre: nombreTarjeta.value,
+                    numero: numeroTarjeta.value,
+                    vencimiento: vencimiento.value,
+                    codigo: codigo.value
+                }
+            })
+
+            let finCompra = document.getElementById ('botonFinal')
+            finCompra.className = 'boton'
+            
+            finCompra.addEventListener ('click', ()=>{
+                let divFinal = document.createElement ('div')
+                divFinal.className = 'div-final'
+                divFinal.innerHTML = `
+                <p class= 'texto'>¡Gracias por tu compra ${nombreUsuario.value}!</p>
+                <p class= 'texto'>Enviaremos tu pedido a ${direccionUsuario.value}.
+                En las siguientes 48 hs recibiras el codigo de seguimiento de tu pedido en tu correo electronico.
+                Ante cualquier inconveniente, comunicate a 3563487569 o estudiocrea@gmail.com.
+                </p>
+                `
+            carritoDeCompras.append (divFinal)
+            })
+        }
+    }) */

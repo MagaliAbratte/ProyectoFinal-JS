@@ -40,8 +40,7 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item">
-<!--            <a href="./pages/carrito.html"> -->
-            <img src="./assets/img/iconos/compra.png" alt="Carrito de Compra" id="iconoCarrito"><span id="contador" class="contadorCarrito"></span>
+            <img src="./assets/img/iconos/compra.png" alt="Carrito de Compra" id="iconoCarrito"><!-- <span id="contador" class="contadorCarrito"></span> -->
            </a>
           </li>
         </ul>
@@ -134,13 +133,18 @@
       </div>
      </div>
 
-    <div id="tarjetasProductos" class="tarjetas">
-    </div>
+     <div class="tarjetas" id="contenedorProductos"></div>
 
-    <div id="carritoDeCompras" class="carrito-compras">
-    </div>
-
-   </main>
+     <div id="carritoDeCompras" class="carrito-compras">
+      <div class="header-carrito">Carrito de Compras
+       <button class="boton" id="verCarrito">Ver Carrito</button>
+       <button class="boton" id="vaciarCarrito">Vaciar Carrito</button>
+      </div>
+       <div id="contenedorCarrito"></div>
+       <h3 class="footer-carrito">Total de la compra: <span id="totalCompra">0</span></h3>
+       <button id= 'completarCompra' class="boton">Completar Compra</button>
+      </div> 
+    </main>
 
      <footer class="footer">
        <div class="footerImg">
@@ -166,6 +170,7 @@
    integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
    crossorigin="anonymous"
  ></script>
- <script src="./index.js"></script>
+ <!-- <script src="./index.js"></script> -->
+ <script src="./main.js"></script>
 </body>
 </html>

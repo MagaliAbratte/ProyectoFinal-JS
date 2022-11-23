@@ -117,15 +117,18 @@
 }
 
 .carrito-compras {
-  margin-top: 30px;
-  margin-left: 20%;
+  width: 70%;
+  margin: 5% 15%;
   background-color: #E3E3E3;
-  width: 800px;
-  height: auto;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  border-radius: 5%;
+  align-items: center;
+  /*  position: fixed;
+     overflow: auto;
+     z-index: 9;
+     top: 12vh;
+     scrollbar-color: none;
+  */
 }
 .carrito-compras .header-carrito {
   display: flex;
@@ -135,26 +138,30 @@
   color: white;
   background-color: #575757;
   padding: 20px;
+  width: 100%;
+  font-size: 1.5rem;
 }
 .carrito-compras .contenido-carrito {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: space-evenly;
   padding: 20px;
   font-family: "Urbanist", sans-serif;
   color: #737373;
+  width: 100%;
 }
 .carrito-compras .contenido-carrito:hover {
   background-color: #31394C;
   color: white;
 }
 .carrito-compras .contenido-carrito .itemCarritoTitulo {
-  width: 300px;
+  width: 200px;
   align-items: center;
   font-size: 2rem;
 }
 .carrito-compras .contenido-carrito .itemCarrito {
-  width: 200px;
+  margin-left: 80px;
+  width: 300px;
   align-items: center;
   font-size: 1.5rem;
 }
@@ -167,6 +174,7 @@
   font-size: 1.5rem;
   padding: 15px;
   border: none;
+  width: 100%;
 }
 .carrito-compras .footer-carrito:hover {
   opacity: 1;
@@ -178,14 +186,14 @@
   justify-content: center;
   width: 600px;
   gap: 10px;
-  margin-left: 12%;
+  margin-left: 0;
 }
 .carrito-compras .divPago {
   padding: 30px;
-  margin-left: 8%;
+  margin-left: 0;
 }
 .carrito-compras .divPago .select {
-  width: 600px;
+  width: 500px;
   min-height: 25px;
   border: none;
   font-size: 1.2rem;
@@ -208,6 +216,7 @@
   justify-content: center;
   width: 600px;
   gap: 10px;
+  margin-left: 10%;
 }
 .carrito-compras .divPago .div-trescuotas {
   margin-top: 20px;
@@ -216,6 +225,7 @@
   justify-content: center;
   width: 600px;
   gap: 10px;
+  margin-left: 10%;
 }
 .carrito-compras .div-final {
   padding: 10px;
