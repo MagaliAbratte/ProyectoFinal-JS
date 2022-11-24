@@ -1,3 +1,5 @@
+//DOM, EVENTOS Y STORAGE - E-COMMERCE ESTUDIO CREA
+
 class ProductosCrea {
     constructor (id,nombre,img, precio, descripcion, cantidad){
         this.id = id;
@@ -47,7 +49,7 @@ productos.forEach((producto) => {
         <div class="card-body">
         <img src="${producto.img}" class= "imagenesProductos">
         <h3 class="card-title"> ${producto.nombre} </h3>
-        <p class="card-text-precio"> ${producto.precio} </p>
+        <p class="card-text-precio"> $${producto.precio} </p>
         <p class='card-text-descripcion'>${producto.descripcion}</p>
         <button id="boton${producto.id}" class="boton">Añadir</button>
         </div>
@@ -62,6 +64,13 @@ productos.forEach((producto) => {
   });
   
   const carrito = [];
+  const contenedorCarrito = document.getElementById('contenedorCarrito');
+  const contador = document.getElementById ('contador')
+  const contadorCarrito = ()=>{
+  contador.style.display = 'block'
+  contador.innerText = carrito.length
+  }
+  
   
   const agregarAlCarrito = (id) => {
     const producto = productos.find((producto) => producto.id === id);
@@ -72,12 +81,10 @@ productos.forEach((producto) => {
       carrito.push(producto);
     }
     actualizarCarrito();
+    contadorCarrito ();
   };
   
-  const contenedorCarrito = document.getElementById('contenedorCarrito');
-  const verCarrito = document.getElementById('verCarrito');
 
-verCarrito.addEventListener('click', actualizarCarrito);
 function actualizarCarrito() {
     let actualizar = '';
     carrito.forEach((producto) => {
@@ -85,6 +92,7 @@ function actualizarCarrito() {
         <div class="contenido-carrito">
         <h3 class="itemCarritoTitulo"> ${producto.nombre} </h3>
         <p class="itemCarrito">$${producto.precio}</p>
+        <p class= "itemCarrito">${producto.cantidad}</p>
         <button onClick = "eliminarDelCarrito(${producto.id})" class="boton">Eliminar</button>
         </div>`;
     });
@@ -97,74 +105,90 @@ const eliminarDelCarrito = (id) => {
     const producto = carrito.find((producto) => producto.id === id);
     carrito.splice(carrito.indexOf(producto), 1);
     actualizarCarrito();
+    contadorCarrito ();
   };
   
   const vaciarCarrito = document.getElementById('vaciarCarrito');
   vaciarCarrito.addEventListener('click', () => {
     carrito.splice(0, carrito.length);
     actualizarCarrito();
+    contadorCarrito ();
   });
   
   const totalCompra = document.getElementById('totalCompra');
+  const completar = document.getElementById ('completarCompra')
   
   const calcularTotalCompra = () => {
-    total = 0
+    let total = 0
     carrito.forEach((producto) => {
       total += producto.precio * producto.cantidad;
     });
     totalCompra.innerHTML = total;
+
+   if (total !== 0){
+      completar.addEventListener ('click', completarForm)
+    }
   };
 
-  let total 
-
-  const completar = document.getElementById ('completarCompra')
-
-  completar.addEventListener ('click', function completarForm (){
+  function completarForm (){
     let datosUsuario = document.createElement ('div')
     datosUsuario.className = 'datos-usuario'
     datosUsuario.innerHTML = `
-        <h3 class= 'titulo'>Datos personales</h3>
-        <input id=nombreUsuario class= 'inputDatos' placeholder='Ingresa tu nombre'></input>
-        <input id=apellidoUsuario class= 'inputDatos' placeholder='Ingresa tu apellido'></input>
-        <input id=telefonoUsuario  class= 'inputDatos' placeholder='Ingresa tu telefono'></input>
-        <input id=correoUsuario class= 'inputDatos' placeholder='Ingresa tu correo electronico'></input>
-        <input id=direccionUsuario class= 'inputDatos' placeholder='Ingresa tu direccion'></input>
-        <button id=botonEnviarDatos class='boton'>Enviar</button>
-        `
-    carritoDeCompras.append (datosUsuario); 
-    completar.removeEventListener ('click', completarForm)
+      <h3 class= 'titulo'>Datos personales</h3>
+      <input id=nombreUsuario class= 'inputDatos' placeholder='Ingresa tu nombre'></input>
+      <input id=apellidoUsuario class= 'inputDatos' placeholder='Ingresa tu apellido'></input>
+      <input id=telefonoUsuario  class= 'inputDatos' placeholder='Ingresa tu telefono'></input>
+      <input id=correoUsuario class= 'inputDatos' placeholder='Ingresa tu correo electronico'></input>
+      <input id=direccionUsuario class= 'inputDatos' placeholder='Ingresa tu direccion'></input>
+      <button id=botonEnviarDatos class='boton'>Enviar</button>
+      `
+      carritoDeCompras.append (datosUsuario); 
+      completar.removeEventListener ('click', completarForm)
 
-    let nombreUsuario = document.getElementById ('nombreUsuario');
-    let apellidoUsuario = document.getElementById ('apellidoUsuario');
-    let telefonoUsuario = document.getElementById ('telefonoUsuario');
-    let correoUsuario = document.getElementById ('correoUsuario')
-    let direccionUsuario = document.getElementById ('direccionUsuario');
-    let botonEnviar = document.getElementById ('botonEnviarDatos')
+      let nombreUsuario = document.getElementById ('nombreUsuario');
+      let apellidoUsuario = document.getElementById ('apellidoUsuario');
+      let telefonoUsuario = document.getElementById ('telefonoUsuario');
+      let correoUsuario = document.getElementById ('correoUsuario');
+      let direccionUsuario = document.getElementById ('direccionUsuario');
+      let botonEnviar = document.getElementById ('botonEnviarDatos');  
 
-    botonEnviar.addEventListener ('click', function final (){
-      const datosIngresados = {
+      botonEnviar.addEventListener ('click', function final (){
+        const datosIngresados = {
         nombre: nombreUsuario.value,
         apellido: apellidoUsuario.value,
         telefono: telefonoUsuario.value,
         correo: correoUsuario.value,
         direccion: direccionUsuario.value,
-      }
+       }
       
       localStorage.setItem ('DatosCliente', JSON.stringify (datosIngresados))
       
-      let divFinal = document.createElement ('div')
-      divFinal.className = 'div-final'
-      divFinal.innerHTML = `
-      <p class= 'texto'>¡Gracias por tu compra ${nombreUsuario.value}!</p>
-      <p class= 'texto'>Enviaremos tu pedido a ${direccionUsuario.value}.
-      En las siguientes 48 hs recibiras el codigo de seguimiento de tu pedido en tu correo electronico.
-      Ante cualquier inconveniente, comunicate a 3563487569 o estudiocrea@gmail.com.
-      </p>
-      `
-      carritoDeCompras.append (divFinal)
-      botonEnviar.removeEventListener("click", final);
+      if (nombreUsuario.value === '' || apellidoUsuario.value === '' || telefonoUsuario.value === '' || correoUsuario.value === '' || direccionUsuario.value === ''){
+        alert ('Por favor ingresa los datos solicitados')
+      } else {
+        let divFinal = document.createElement ('div')
+        divFinal.className = 'div-final'
+        divFinal.innerHTML = `
+        <p class= 'texto'>¡Gracias por tu compra ${JSON.parse(localStorage.getItem("DatosCliente")).nombre}!</p>
+        <p class= 'texto'>Enviaremos tu pedido a ${JSON.parse(localStorage.getItem("DatosCliente")).direccion}.
+        En las siguientes 48 hs recibiras el codigo de seguimiento de tu pedido en tu correo electronico.
+        Ante cualquier inconveniente, comunicate a 3563487569 o estudiocrea@gmail.com.
+        </p>
+        `
+        carritoDeCompras.append (divFinal)
+        botonEnviar.removeEventListener("click", final);
+      }
     })
-})  
+  } 
+
+   
+
 
 
   
+ 
+
+
+  
+
+    

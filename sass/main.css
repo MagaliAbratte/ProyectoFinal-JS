@@ -55,12 +55,21 @@
   padding: 10px;
 }
 
-.nav-item img {
+.icono-carrito {
+  scroll-behavior: auto;
+}
+
+.navbar {
+  background-color: white;
+  height: 100px;
+  margin-top: 0;
+}
+.navbar .nav-item img {
   width: 50px;
   height: auto;
   cursor: pointer;
 }
-.nav-item img:hover {
+.navbar .nav-item img:hover {
   width: 55px;
 }
 
@@ -69,18 +78,20 @@
   flex-direction: row;
   justify-content: space-evenly;
   flex-wrap: wrap;
-  gap: 50px;
+  gap: 30px;
 }
 .tarjetas .tarjetaProducto {
+  margin-top: 10px;
   text-align: center;
   border: 10px;
   background-color: #E3E3E3;
   padding: 10px;
   border-radius: 10%;
   width: 400px;
-  height: 500px;
+  height: 480px;
   font-family: "Lexend", sans-serif;
   font-size: 1.2rem;
+  box-shadow: 0 5px 5px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
 }
 .tarjetas .tarjetaProducto:hover {
   background-color: #31394C;
@@ -88,6 +99,7 @@
 }
 .tarjetas .tarjetaProducto .card-title {
   font-family: "Poppins", sans-serif;
+  margin-top: 10px;
 }
 .tarjetas .tarjetaProducto .card-text-precio {
   font-family: "Poppins", sans-serif;
@@ -100,6 +112,8 @@
 .tarjetas .tarjetaProducto .imagenesProductos {
   width: 220px;
   height: auto;
+  border-radius: 50%;
+  margin-top: 10px;
 }
 
 .contadorCarrito {
@@ -161,7 +175,7 @@
 }
 .carrito-compras .contenido-carrito .itemCarrito {
   margin-left: 80px;
-  width: 300px;
+  width: 200px;
   align-items: center;
   font-size: 1.5rem;
 }
