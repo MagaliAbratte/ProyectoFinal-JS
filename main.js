@@ -66,6 +66,7 @@ productos.forEach((producto) => {
   const carrito = [];
   const contenedorCarrito = document.getElementById('contenedorCarrito');
   const contador = document.getElementById ('contador')
+  
   const contadorCarrito = ()=>{
   contador.style.display = 'block'
   contador.innerText = carrito.length
