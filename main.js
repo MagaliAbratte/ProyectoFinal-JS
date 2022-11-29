@@ -136,22 +136,22 @@ const eliminarDelCarrito = (id) => {
     datosUsuario.className = 'datos-usuario'
     datosUsuario.innerHTML = `
       <h3 class= 'titulo'>Datos personales</h3>
-      <input id=nombreUsuario class= 'inputDatos' placeholder='Ingresa tu nombre'></input>
-      <input id=apellidoUsuario class= 'inputDatos' placeholder='Ingresa tu apellido'></input>
-      <input id=telefonoUsuario  class= 'inputDatos' placeholder='Ingresa tu telefono'></input>
-      <input id=correoUsuario class= 'inputDatos' placeholder='Ingresa tu correo electronico'></input>
-      <input id=direccionUsuario class= 'inputDatos' placeholder='Ingresa tu direccion'></input>
-      <button id=botonEnviarDatos class='boton'>Enviar</button>
+      <input id="nombreUsuario" class= 'inputDatos' placeholder='Ingresa tu nombre'></input>
+      <input id="apellidoUsuario" class= 'inputDatos' placeholder='Ingresa tu apellido'></input>
+      <input id="telefonoUsuario"  class= 'inputDatos' placeholder='Ingresa tu telefono'></input>
+      <input id="correoUsuario" class= 'inputDatos' placeholder='Ingresa tu correo electronico'></input>
+      <input id="direccionUsuario" class= 'inputDatos' placeholder='Ingresa tu direccion'></input>
+      <button id="botonEnviarDatos" class='boton'>Enviar</button>
       `
       carritoDeCompras.append (datosUsuario); 
       completar.removeEventListener ('click', completarForm)
 
-      let nombreUsuario = document.getElementById ('nombreUsuario');
-      let apellidoUsuario = document.getElementById ('apellidoUsuario');
-      let telefonoUsuario = document.getElementById ('telefonoUsuario');
-      let correoUsuario = document.getElementById ('correoUsuario');
-      let direccionUsuario = document.getElementById ('direccionUsuario');
-      let botonEnviar = document.getElementById ('botonEnviarDatos');  
+      let nombreUsuario = document.getElementById ("nombreUsuario");
+      let apellidoUsuario = document.getElementById ("apellidoUsuario");
+      let telefonoUsuario = document.getElementById ("telefonoUsuario");
+      let correoUsuario = document.getElementById ("correoUsuario");
+      let direccionUsuario = document.getElementById ("direccionUsuario");
+      let botonEnviar = document.getElementById ("botonEnviarDatos");  
 
       botonEnviar.addEventListener ('click', function final (){
         const datosIngresados = {
@@ -159,10 +159,11 @@ const eliminarDelCarrito = (id) => {
         apellido: apellidoUsuario.value,
         telefono: telefonoUsuario.value,
         correo: correoUsuario.value,
-        direccion: direccionUsuario.value,
+        direccion: direccionUsuario.value, 
        }
       
-      localStorage.setItem ('DatosCliente', JSON.stringify (datosIngresados))
+      localStorage.setItem ('datosCliente', JSON.stringify (datosIngresados))
+      console.log (datosIngresados)
       
       if (nombreUsuario.value === '' || apellidoUsuario.value === '' || telefonoUsuario.value === '' || correoUsuario.value === '' || direccionUsuario.value === ''){
         alert ('Por favor ingresa los datos solicitados')
@@ -170,8 +171,8 @@ const eliminarDelCarrito = (id) => {
         let divFinal = document.createElement ('div')
         divFinal.className = 'div-final'
         divFinal.innerHTML = `
-        <p class= 'texto'>¡Gracias por tu compra ${JSON.parse(localStorage.getItem("DatosCliente")).nombre}!</p>
-        <p class= 'texto'>Enviaremos tu pedido a ${JSON.parse(localStorage.getItem("DatosCliente")).direccion}.
+        <p class= 'texto'>¡Gracias por tu compra ${JSON.parse(localStorage.getItem("datosCliente")).nombre}!</p>
+        <p class= 'texto'>Enviaremos tu pedido a ${JSON.parse(localStorage.getItem("datosCliente")).direccion}.
         En las siguientes 48 hs recibiras el codigo de seguimiento de tu pedido en tu correo electronico.
         Ante cualquier inconveniente, comunicate a 3563487569 o estudiocrea@gmail.com.
         </p>
