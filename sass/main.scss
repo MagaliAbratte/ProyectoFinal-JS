@@ -65,6 +65,22 @@ $colorBotones2: #D9D9D9;
     padding: 10px;
 }
 
+.inputDatosBuscador{
+    width: 60%;
+    min-height: 25px;
+    border: 0;
+    font-size: 1rem;
+    font-family: $fontTexto;
+    letter-spacing: .15rem;
+    margin-top: 5px;
+    border-radius: 4px;
+    padding: 10px;
+    background-color: $colorBotones2;
+    border: none;
+    margin-left: 290px;
+    margin-bottom: 50px;
+}
+
 .icono-carrito{
     scroll-behavior: auto;
 }
@@ -278,6 +294,10 @@ $colorBotones2: #D9D9D9;
     width: 600px;
     margin-left: 10%;
 }
+}
+
+.filtro {
+    display: none;
 }
 
 /* BOOTSTRAP */

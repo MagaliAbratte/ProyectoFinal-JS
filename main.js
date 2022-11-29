@@ -40,6 +40,16 @@ productos.push (plantas3)
   
   
 const contenedorProductos = document.getElementById('contenedorProductos');
+
+document.addEventListener ('keyup', (e)=>{
+  if (e.target.matches("#buscador")){
+    document.querySelectorAll (".tarjetaProducto").forEach (elemento =>{
+      elemento.textContent.toLowerCase().includes (e.target.value.toLowerCase())
+      ? elemento.classList.remove ("filtro")
+      : elemento.classList.add ("filtro")
+    })
+  }
+})
   
 productos.forEach((producto) => {
     const divProducto = document.createElement('div');
@@ -84,7 +94,7 @@ productos.forEach((producto) => {
     actualizarCarrito();
     contadorCarrito ();
   };
-  
+
 
 function actualizarCarrito() {
     let actualizar = '';
@@ -131,11 +141,17 @@ const eliminarDelCarrito = (id) => {
     }
   };
 
+  const datosIngresados = {}
+
+  if (datosIngresados){
+    alert (`Bienvenidx ${JSON.parse(localStorage.getItem("datosCliente")).nombre}, nos alegramos de tenerte de vuelta`)
+  }
+
   function completarForm (){
     let datosUsuario = document.createElement ('div')
     datosUsuario.className = 'datos-usuario'
     datosUsuario.innerHTML = `
-      <h3 class= 'titulo'>Datos personales</h3>
+      <h3 class= 'titulo'>Datos Personales</h3>
       <input id="nombreUsuario" class= 'inputDatos' placeholder='Ingresa tu nombre'></input>
       <input id="apellidoUsuario" class= 'inputDatos' placeholder='Ingresa tu apellido'></input>
       <input id="telefonoUsuario"  class= 'inputDatos' placeholder='Ingresa tu telefono'></input>
@@ -154,16 +170,13 @@ const eliminarDelCarrito = (id) => {
       let botonEnviar = document.getElementById ("botonEnviarDatos");  
 
       botonEnviar.addEventListener ('click', function final (){
-        const datosIngresados = {
-        nombre: nombreUsuario.value,
-        apellido: apellidoUsuario.value,
-        telefono: telefonoUsuario.value,
-        correo: correoUsuario.value,
-        direccion: direccionUsuario.value, 
-       }
-      
+        datosIngresados.nombre = nombreUsuario.value
+        datosIngresados.apellido = apellidoUsuario.value
+        datosIngresados.telefono = telefonoUsuario.value
+        datosIngresados.correo = correoUsuario.value
+        datosIngresados.direccion = direccionUsuario.value
+
       localStorage.setItem ('datosCliente', JSON.stringify (datosIngresados))
-      console.log (datosIngresados)
       
       if (nombreUsuario.value === '' || apellidoUsuario.value === '' || telefonoUsuario.value === '' || correoUsuario.value === '' || direccionUsuario.value === ''){
         alert ('Por favor ingresa los datos solicitados')
