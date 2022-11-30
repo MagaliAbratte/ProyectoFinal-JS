@@ -144,7 +144,15 @@ const eliminarDelCarrito = (id) => {
   const datosIngresados = {}
 
   if (datosIngresados){
-    alert (`Bienvenidx ${JSON.parse(localStorage.getItem("datosCliente")).nombre}, nos alegramos de tenerte de vuelta`)
+    Swal.fire ({
+      title: `Bienvenidx ${JSON.parse(localStorage.getItem("datosCliente")).nombre}`,
+      text: `Nos alegramos de tenerte de vuelta`,
+      timer: 2500,
+      showConfirmButton: false,
+      background: '#D9D9D9',
+      width: '550px',
+      padding: '50px',
+    })
   }
 
   function completarForm (){
@@ -179,14 +187,24 @@ const eliminarDelCarrito = (id) => {
       localStorage.setItem ('datosCliente', JSON.stringify (datosIngresados))
       
       if (nombreUsuario.value === '' || apellidoUsuario.value === '' || telefonoUsuario.value === '' || correoUsuario.value === '' || direccionUsuario.value === ''){
-        alert ('Por favor ingresa los datos solicitados')
+        Swal.fire ({
+          icon: 'warning',
+          title: 'Por favor, ingresa los datos solicitados.',
+          timer: 3000,
+          confirmButtonText: 'Continuar',
+          background: '#D9D9D9',
+          width: '550px',
+          padding: '50px',
+          confirmButtonColor: '#969696'
+        })
       } else {
         let divFinal = document.createElement ('div')
         divFinal.className = 'div-final'
         divFinal.innerHTML = `
         <p class= 'texto'>¡Gracias por tu compra ${JSON.parse(localStorage.getItem("datosCliente")).nombre}!</p>
         <p class= 'texto'>Enviaremos tu pedido a ${JSON.parse(localStorage.getItem("datosCliente")).direccion}.
-        En las siguientes 48 hs recibiras el codigo de seguimiento de tu pedido en tu correo electronico.
+        Recibiras en tu correo electronico las indicaciones para realizar el pago.
+        En las siguientes 48 hs enviaremos el codigo de seguimiento de tu pedido a tu correo electronico.
         Ante cualquier inconveniente, comunicate a 3563487569 o estudiocrea@gmail.com.
         </p>
         `
@@ -195,6 +213,7 @@ const eliminarDelCarrito = (id) => {
       }
     })
   } 
+
 
    
 
