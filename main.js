@@ -1,7 +1,7 @@
 //DOM, EVENTOS Y STORAGE - E-COMMERCE ESTUDIO CREA
 
 class ProductosCrea {
-    constructor (id, nombre, precio, descripcion, cantidad){
+    constructor (id,img, nombre, precio, descripcion, cantidad){
         this.id = id;
         this.img = img;
         this.nombre = nombre;
@@ -55,7 +55,7 @@ async function getProductsFromJSON() {
   let res = await fetch("./json/productos.json");
   let response = await res.json();
   response.forEach((product) => {
-    let productoNuevo = new ProductosCrea(product.id, product.img, product.nombre, product.precio, product.descripcion, product.cantidad)
+    let productoNuevo = new ProductosCrea (product.id, product.img, product.nombre, product.precio, product.descripcion, product.cantidad)
     productos.push(productoNuevo)
   });
   crearTarjetas();
@@ -155,7 +155,7 @@ const eliminarDelCarrito = (id) => {
 
   const datosIngresados = {}
 
-  if (datosIngresados){
+ /*  if (datosIngresados){
     Swal.fire ({
       title: `Bienvenidx ${JSON.parse(localStorage.getItem("datosCliente")).nombre}`,
       text: `Nos alegramos de tenerte de vuelta`,
@@ -165,7 +165,7 @@ const eliminarDelCarrito = (id) => {
       width: '550px',
       padding: '50px',
     })
-  }
+  } */ 
 
   function completarForm (){
     let datosUsuario = document.createElement ('div')
@@ -229,3 +229,4 @@ const eliminarDelCarrito = (id) => {
   getProductsFromJSON()
 
    
+/*   <img src="${producto.img}" class= "imagenesProductos"> */

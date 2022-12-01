@@ -1,6 +1,7 @@
 [
     {
         "id": 1,
+        "img": "assets/img/sliders/mate1.jpg",
         "nombre": "MATE CELESTE",
         "precio": 1200,
         "descripcion": "Mate de ceramica moldeado a mano, con detalles en relieve y flores celestes.",
@@ -8,6 +9,7 @@
     },
     {
         "id": 2,
+        "img": "assets/img/sliders/mates2.jpg",
         "nombre": "MATE LISO",
         "precio": 1200,
         "descripcion": "Mate de ceramica moldeado a mano, con detalles en relieve y flores rosadas.",
@@ -15,6 +17,7 @@
     },
     {
         "id": 3,
+        "img": "assets/img/sliders/mates3.jpg",
         "nombre": "MATE ROSADO",
         "precio": 1200,
         "descripcion": "Mate de ceramica moldeado a mano, con detalles en relieve y color liso.",
@@ -22,6 +25,7 @@
     },
     {
         "id": 4,
+        "img": "assets/img/sliders/almohadon1.jpg",
         "nombre": "ALMOHADON BORDADO",
         "precio": 1500,
         "descripcion": "Almohadon 50cm x 40cm, rayado con apliques sublimados, varios colores.",
@@ -29,6 +33,7 @@
     },
     {
         "id": 5,
+        "img": "assets/img/sliders/almohadon2.jpg",
         "nombre": "ALMOHADON RAYADO",
         "precio": 1500,
         "descripcion": "Almohadon 50cm x 40cm, rayado con bordes con apliques, varios colores.",
@@ -36,6 +41,7 @@
     },
     {
         "id": 6,
+        "img": "assets/img/sliders/almohadon3.jpg",
         "nombre": "ALMOHADON CON BORDE",
         "precio": 1500,
         "descripcion": "Almohadon 50cm x 40cm, con apliques, bordados y flecos de broderi.",
@@ -43,6 +49,7 @@
     },
     {
         "id": 7,
+        "img": "assets/img/sliders/canastos1.jpg",
         "nombre": "CANASTO TEJIDO",
         "precio": 1600,
         "descripcion": "Canastos de produccion artesanal, armados con paja verde.",
@@ -50,6 +57,7 @@
     },
     {
         "id": 8,
+        "img": "assets/img/sliders/canastos2.jpg",
         "nombre": "CANASTO BICOLOR",
         "precio": 1600,
         "descripcion": "Canastos de produccion artesanal, armados con paja de dos colores.",
@@ -57,6 +65,7 @@
     },
     {
         "id": 9,
+        "img": "assets/img/sliders/canastos3.jpg",
         "nombre": "CANASTO TRENZADO",
         "precio": 1600,
         "descripcion": "Canastos de produccion artesanal, armados con paja trenzada.",
@@ -64,6 +73,7 @@
     },
     {
         "id": 10,
+        "img": "assets/img/sliders/monstera.jpg",
         "nombre": "PLANTA MONSTERA",
         "precio": 1800,
         "descripcion": "Planta monstera de tamaño mediano o grande. Se entrega lista para transplantar.",
@@ -71,6 +81,7 @@
     },
     {
         "id": 11,
+        "img": "assets/img/sliders/schefflera.jpg",
         "nombre": "PLANTA SCHEFFLERA",
         "precio": 1800,
         "descripcion": "Planta schefflera de tamaño mediano o grande. Se entrega lista para transplantar.",
@@ -78,6 +89,7 @@
     },
     {
         "id": 12,
+        "img": "assets/img/sliders/croton.jpg",
         "nombre": "PLANTA CROTON",
         "precio": 1800,
         "descripcion": "Planta croton de tamaño mediano o grande. Se entrega lista para transplantar.",
