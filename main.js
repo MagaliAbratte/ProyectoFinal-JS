@@ -1,10 +1,10 @@
 //DOM, EVENTOS Y STORAGE - E-COMMERCE ESTUDIO CREA
 
 class ProductosCrea {
-    constructor (id,nombre,img, precio, descripcion, cantidad){
+    constructor (id, nombre, precio, descripcion, cantidad){
         this.id = id;
-        this.nombre = nombre;
         this.img = img;
+        this.nombre = nombre;
         this.precio = precio;
         this.descripcion = descripcion;
         this.cantidad = cantidad;
@@ -12,8 +12,8 @@ class ProductosCrea {
   }
   
 const productos = [];
-
-let mates1 = new ProductosCrea (1,'MATE CELESTE','./assets/img/sliders/mate1.jpg', 1200, 'Mate de ceramica moldeado a mano, con detalles en relieve y flores celestes.',1);
+ 
+/* let mates1 = new ProductosCrea (1,'MATE CELESTE','./assets/img/sliders/mate1.jpg', 1200, 'Mate de ceramica moldeado a mano, con detalles en relieve y flores celestes.',1);
 productos.push (mates1)
 let mates2 = new ProductosCrea (2, 'MATE LISO','./assets/img/sliders/mates2.jpg', 1200, 'Mate de ceramica moldeado a mano, con detalles en relieve y flores rosadas.',1);
 productos.push (mates2)
@@ -36,11 +36,9 @@ productos.push (plantas1)
 let plantas2 = new ProductosCrea (11, 'PLANTA SCHEFFLERA','./assets/img/sliders/schefflera.jpg', 1800, 'Planta schefflera de tamaño mediano o grande. Se entrega lista para transplantar.',1);
 productos.push (plantas2)
 let plantas3 = new ProductosCrea (12, 'PLANTA CROTON','./assets/img/sliders/croton.jpg', 1800, 'Planta croton de tamaño mediano o grande. Se entrega lista para transplantar.',1);
-productos.push (plantas3) 
-  
-  
-const contenedorProductos = document.getElementById('contenedorProductos');
+productos.push (plantas3)  */ 
 
+  
 document.addEventListener ('keyup', (e)=>{
   if (e.target.matches("#buscador")){
     document.querySelectorAll (".tarjetaProducto").forEach (elemento =>{
@@ -50,28 +48,42 @@ document.addEventListener ('keyup', (e)=>{
     })
   }
 })
-  
-productos.forEach((producto) => {
-    const divProducto = document.createElement('div');
-    divProducto.className = 'tarjetaProducto'
-    divProducto.innerHTML = `
-        <div class='datosTarjeta'>
-        <div class="card-body">
-        <img src="${producto.img}" class= "imagenesProductos">
-        <h3 class="card-title"> ${producto.nombre} </h3>
-        <p class="card-text-precio"> $${producto.precio} </p>
-        <p class='card-text-descripcion'>${producto.descripcion}</p>
-        <button id="boton${producto.id}" class="boton">Añadir</button>
-        </div>
-        </div>`;
 
-    contenedorProductos.append(divProducto);
+const contenedorProductos = document.getElementById('contenedorProductos');
 
-    const boton = document.getElementById(`boton${producto.id}`);
-    boton.addEventListener('click', () => {
-      agregarAlCarrito(producto.id);
-    });
+async function getProductsFromJSON() {
+  let res = await fetch("./json/productos.json");
+  let response = await res.json();
+  response.forEach((product) => {
+    let productoNuevo = new ProductosCrea(product.id, product.img, product.nombre, product.precio, product.descripcion, product.cantidad)
+    productos.push(productoNuevo)
   });
+  crearTarjetas();
+}
+
+function crearTarjetas () {
+  productos.forEach((producto) => {
+      const divProducto = document.createElement('div');
+      divProducto.className = 'tarjetaProducto'
+      divProducto.innerHTML = `
+          <div class='datosTarjeta'>
+          <div class="card-body">
+          <img src="${producto.img}" class= "imagenesProductos">
+          <h3 class="card-title"> ${producto.nombre} </h3>
+          <p class='card-text-descripcion'>${producto.descripcion}</p>
+          <p class="card-text-precio"> $${producto.precio} </p>
+          <button id="boton${producto.id}" class="boton">Añadir</button>
+          </div>
+          </div>`;
+  
+      contenedorProductos.append(divProducto);
+  
+      const boton = document.getElementById(`boton${producto.id}`);
+      boton.addEventListener('click', () => {
+        agregarAlCarrito(producto.id);
+      });
+    });
+}
   
   const carrito = [];
   const contenedorCarrito = document.getElementById('contenedorCarrito');
@@ -214,15 +226,6 @@ const eliminarDelCarrito = (id) => {
     })
   } 
 
+  getProductsFromJSON()
 
    
-
-
-
-  
- 
-
-
-  
-
-    

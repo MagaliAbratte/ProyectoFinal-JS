@@ -1,0 +1,86 @@
+[
+    {
+        "id": 1,
+        "nombre": "MATE CELESTE",
+        "precio": 1200,
+        "descripcion": "Mate de ceramica moldeado a mano, con detalles en relieve y flores celestes.",
+        "cantidad":1
+    },
+    {
+        "id": 2,
+        "nombre": "MATE LISO",
+        "precio": 1200,
+        "descripcion": "Mate de ceramica moldeado a mano, con detalles en relieve y flores rosadas.",
+        "cantidad":1
+    },
+    {
+        "id": 3,
+        "nombre": "MATE ROSADO",
+        "precio": 1200,
+        "descripcion": "Mate de ceramica moldeado a mano, con detalles en relieve y color liso.",
+        "cantidad":1
+    },
+    {
+        "id": 4,
+        "nombre": "ALMOHADON BORDADO",
+        "precio": 1500,
+        "descripcion": "Almohadon 50cm x 40cm, rayado con apliques sublimados, varios colores.",
+        "cantidad":1
+    },
+    {
+        "id": 5,
+        "nombre": "ALMOHADON RAYADO",
+        "precio": 1500,
+        "descripcion": "Almohadon 50cm x 40cm, rayado con bordes con apliques, varios colores.",
+        "cantidad":1
+    },
+    {
+        "id": 6,
+        "nombre": "ALMOHADON CON BORDE",
+        "precio": 1500,
+        "descripcion": "Almohadon 50cm x 40cm, con apliques, bordados y flecos de broderi.",
+        "cantidad":1
+    },
+    {
+        "id": 7,
+        "nombre": "CANASTO TEJIDO",
+        "precio": 1600,
+        "descripcion": "Canastos de produccion artesanal, armados con paja verde.",
+        "cantidad":1
+    },
+    {
+        "id": 8,
+        "nombre": "CANASTO BICOLOR",
+        "precio": 1600,
+        "descripcion": "Canastos de produccion artesanal, armados con paja de dos colores.",
+        "cantidad":1
+    },
+    {
+        "id": 9,
+        "nombre": "CANASTO TRENZADO",
+        "precio": 1600,
+        "descripcion": "Canastos de produccion artesanal, armados con paja trenzada.",
+        "cantidad":1
+    },
+    {
+        "id": 10,
+        "nombre": "PLANTA MONSTERA",
+        "precio": 1800,
+        "descripcion": "Planta monstera de tamaño mediano o grande. Se entrega lista para transplantar.",
+        "cantidad":1
+    },
+    {
+        "id": 11,
+        "nombre": "PLANTA SCHEFFLERA",
+        "precio": 1800,
+        "descripcion": "Planta schefflera de tamaño mediano o grande. Se entrega lista para transplantar.",
+        "cantidad":1
+    },
+    {
+        "id": 12,
+        "nombre": "PLANTA CROTON",
+        "precio": 1800,
+        "descripcion": "Planta croton de tamaño mediano o grande. Se entrega lista para transplantar.",
+        "cantidad":1
+    }
+]
