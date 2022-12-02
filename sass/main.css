@@ -43,6 +43,10 @@
   transform: translateY(10px);
 }
 
+#botonEnviarDatos {
+  margin-bottom: 40px;
+}
+
 .inputDatos {
   width: 100%;
   min-height: 25px;
@@ -120,10 +124,10 @@
 .tarjetas .tarjetaProducto .card-text-precio {
   font-family: "Poppins", sans-serif;
   font-size: 1.2rem;
-  padding: 10px;
+  padding: 0px;
 }
 .tarjetas .tarjetaProducto .card-text-descripcion {
-  margin-top: -15px;
+  margin-top: 5px;
 }
 .tarjetas .tarjetaProducto .imagenesProductos {
   width: 220px;
@@ -153,50 +157,6 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  /* .divPago{
-      padding: 30px;
-      margin-left: 0;
-
-      .select{
-          width: 500px;
-          min-height: 25px;
-          border: none;
-          font-size: 1.2rem;
-          font-family: $fontTexto;
-          margin-top: 15px;
-          margin-bottom: 15px;
-          border-radius: 4px;
-          padding: 10px;
-
-      }
-
-      .div-pagounico{
-          width: 600px;
-          color: $colorEncabezados;
-          margin-left: 10%;
-          margin-top: 30px; 
-      }
-
-      .div-seiscuotas{
-          margin-top: 20px;
-          display: flex;
-          flex-direction: column;
-          justify-content: center;
-          width: 600px;
-          gap: 10px;
-          margin-left: 10%;
-      }
-
-      .div-trescuotas{
-          margin-top: 20px;
-          display: flex;
-          flex-direction: column;
-          justify-content: center;
-          width: 600px;
-          gap: 10px;
-          margin-left: 10%;
-      }
-  } */
 }
 .carrito-compras .header-carrito {
   display: flex;
@@ -259,7 +219,7 @@
 .carrito-compras .div-final {
   padding: 10px;
   width: 600px;
-  margin-left: 10%;
+  margin-left: 2%;
 }
 
 .filtro {
@@ -312,7 +272,6 @@
   background-color: #6B7060;
 }
 
-/* FOOTER */
 footer {
   display: flex;
   flex-direction: row-reverse;

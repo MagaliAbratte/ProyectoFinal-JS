@@ -15,7 +15,8 @@ $colorFondo: #E3E3E3;
 $colorBotones1: #969696;
 $colorBotones2: #D9D9D9;
 
-//GENERALES
+//GENERALES//
+
 .titulo{
     align-self: center;
     font-family: $fontEncabezados;
@@ -53,6 +54,10 @@ $colorBotones2: #D9D9D9;
     transform: translateY(10px);
   }
 
+  #botonEnviarDatos{
+    margin-bottom: 40px;
+  }
+
 .inputDatos{
     width: 100%;
     min-height: 25px;
@@ -85,7 +90,8 @@ $colorBotones2: #D9D9D9;
     scroll-behavior: auto;
 }
 
-//NAV
+//NAV//
+
 .navbar{
     background-color: white;
     height: 100px;
@@ -104,7 +110,7 @@ $colorBotones2: #D9D9D9;
     }
 }
 
-//TARJETAS
+//TARJETAS//
 .tarjetas{
    display: flex;
    flex-direction: row;
@@ -138,11 +144,11 @@ $colorBotones2: #D9D9D9;
      .card-text-precio{
         font-family: $fontTexto1;
         font-size: 1.2rem;
-        padding: 10px;
+        padding: 0px;
      }
      
      .card-text-descripcion{
-        margin-top: -15px;
+        margin-top: 5px;
      }
 
      .imagenesProductos{
@@ -154,7 +160,8 @@ $colorBotones2: #D9D9D9;
  }
 }
  
-//CARRITO
+//CARRITO//
+
 .contadorCarrito{
     background-color: $colorBotones1;
     color: white;
@@ -244,54 +251,11 @@ $colorBotones2: #D9D9D9;
     margin-left: 0;
 }
 
-.divPago{
-    padding: 30px;
-    margin-left: 0;
-
-    .select{
-        width: 500px;
-        min-height: 25px;
-        border: none;
-        font-size: 1.2rem;
-        font-family: $fontTexto;
-        margin-top: 15px;
-        margin-bottom: 15px;
-        border-radius: 4px;
-        padding: 10px;
-    }
-
-    .div-pagounico{
-        width: 600px;
-        color: $colorEncabezados;
-        margin-left: 10%;
-        margin-top: 30px; 
-    }
-
-    .div-seiscuotas{
-        margin-top: 20px;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        width: 600px;
-        gap: 10px;
-        margin-left: 10%;
-    }
-
-    .div-trescuotas{
-        margin-top: 20px;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        width: 600px;
-        gap: 10px;
-        margin-left: 10%;
-    }
-} 
 
 .div-final{
     padding: 10px;
     width: 600px;
-    margin-left: 10%;
+    margin-left: 2%;
 }
 }
 
@@ -352,7 +316,8 @@ $colorBotones2: #D9D9D9;
     }
 
 
-/* FOOTER */
+//FOOTER//
+
 footer{
     display: flex;
     flex-direction: row-reverse;
