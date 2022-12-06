@@ -198,4 +198,3 @@ const contador = document.getElementById ('contador')
   } 
 
 getProductsFromJSON()
-
